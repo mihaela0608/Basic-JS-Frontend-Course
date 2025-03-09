@@ -11,7 +11,7 @@ function solve(text){
         }
     }
     for(word of newArr){
-        let newWord = word.replace('#', '');
+        let newWord = word.replaceAll('#', '');
         console.log(newWord);
     }
 }

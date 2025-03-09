@@ -14,6 +14,6 @@ function sorting(arr){
         }
         newArr.push(num);
     }
-    console.log(newArr);
+    return newArr;
 }
 sorting([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
