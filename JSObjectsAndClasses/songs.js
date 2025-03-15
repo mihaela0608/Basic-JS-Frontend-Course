@@ -11,8 +11,8 @@ function solve(arr) {
         }
     }
 
-    let songs = Number(arr[0]); // Convert the first element to a number
-    let songArray = []; // Use an array instead of an object
+    let songs = Number(arr[0]); 
+    let songArray = []; 
 
     for (let i = 1; i <= songs; i++) {
         let songInfo = arr[i].split('_');
@@ -21,7 +21,7 @@ function solve(arr) {
         let songTime = songInfo[2];
         
         let song = new Song(typeList, songName, songTime);
-        songArray.push(song); // Store song objects in an array
+        songArray.push(song); 
     }
 
     let filterType = arr[arr.length - 1];
@@ -39,5 +39,4 @@ function solve(arr) {
     }
 }
 
-// Test case
 solve([4, 'favourite_DownTown_3:14', 'listenLater_Andalouse_3:24', 'favourite_In To The Night_3:58', 'favourite_Live It Up_3:48', 'all']);
