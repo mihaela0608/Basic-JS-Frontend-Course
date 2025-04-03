@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .highlight { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1 id="title">Hello, DOM!</h1>
+    <p id="description">This is a paragraph that we will modify using JavaScript.</p>
+
+    <button id="changeText">Change Text</button>
+    <button id="addItem">Add Item</button>
+
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        let title = document.getElementById('title');
+        title.innerText = 'DOM is awesome!';
+
+        let paragraph = document.getElementById('description');
+        paragraph.style.color = 'green';
+
+        title.classList.add("highlight");
+
+        let list = document.getElementById('list');
+        let newItem = document.createElement('li');
+        newItem.innerText = 'New Item';
+        list.appendChild(newItem);
+
+        let changeButton = document.getElementById('changeText');
+        
+
+
+        let addButton = document.getElementById('addItem');
+        addButton.addEventListener('click', function(){
+            let addedItem = document.createElement('li');
+            addedItem.innerText = 'New';
+            list.appendChild(addedItem);
+        });
+
+
+        changeButton.addEventListener('click', function(){
+            paragraph.innerText = 'The text has changed';
+
+            let items = document.querySelectorAll('#list li');
+            if(items.length > 0){
+                list.removeChild(items[items.length - 1]);
+            }
+        });
+    </script>
+
+</body>
+</html>
